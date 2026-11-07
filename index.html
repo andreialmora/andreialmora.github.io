@@ -65,35 +65,29 @@
 </head>
 <body class="h-screen w-screen overflow-hidden flex flex-col justify-between bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-blue-600 selection:text-white transition-colors duration-300">
 
-  <!-- Top Navigation Bar (Resume Header, Edit Button Removed) -->
+  <!-- Top Navigation Bar (No Next/Edit Buttons on Top) -->
   <header class="shrink-0 z-40 glass-nav border-b border-blue-100/80 dark:border-slate-800/80 transition-colors">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
       <button id="navBrandBtn" type="button" class="flex items-center gap-2.5 text-left group focus:outline-none">
         <span class="w-8 h-8 rounded-lg bg-blue-600 text-white font-semibold text-sm flex items-center justify-center shadow-sm group-hover:bg-blue-700 transition">AA</span>
         <div>
           <span class="font-semibold text-sm tracking-tight text-slate-900 dark:text-white block leading-none">Andrei Almora</span>
-          <span id="pageIndicatorBadge" class="text-[11px] text-blue-600 dark:text-blue-400 font-medium">Page 1 of 5 • Resume Cover</span>
+          <span id="pageIndicatorBadge" class="text-[11px] text-blue-600 dark:text-blue-400 font-medium">Page 1 of 6 • Resume Cover</span>
         </div>
       </button>
 
       <!-- Desktop Ordered Page Switcher Pills -->
       <nav class="hidden md:flex items-center gap-1 bg-blue-50/90 dark:bg-slate-900/90 p-1 rounded-full border border-blue-100 dark:border-slate-800">
-        <button type="button" data-transport="hero" class="nav-pill px-3.5 py-1 rounded-full text-xs font-medium transition bg-blue-600 text-white shadow-sm">Home</button>
-        <button type="button" data-transport="personal-info" class="nav-pill px-3.5 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Personal Info</button>
-        <button type="button" data-transport="achievements" class="nav-pill px-3.5 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Achievements</button>
-        <button type="button" data-transport="pictures" class="nav-pill px-3.5 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Pictures</button>
-        <button type="button" data-transport="contacts" class="nav-pill px-3.5 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Contacts</button>
+        <button type="button" data-transport="hero" class="nav-pill px-3 py-1 rounded-full text-xs font-medium transition bg-blue-600 text-white shadow-sm">Home</button>
+        <button type="button" data-transport="personal-info" class="nav-pill px-3 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Personal Info</button>
+        <button type="button" data-transport="educational-attainment" class="nav-pill px-3 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Educational Attainment</button>
+        <button type="button" data-transport="achievements" class="nav-pill px-3 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Achievements</button>
+        <button type="button" data-transport="pictures" class="nav-pill px-3 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Pictures</button>
+        <button type="button" data-transport="contacts" class="nav-pill px-3 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition">Contacts</button>
       </nav>
 
-      <!-- Right Utility Controls: Prev / Next Page + Quick Resume Overview -->
+      <!-- Right Utility Controls (Only CV Summary & Theme Toggle) -->
       <div class="flex items-center gap-1.5">
-        <button id="headerPrevPageBtn" type="button" class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-700 transition disabled:opacity-40" title="Previous Page">
-          <span>← Prev</span>
-        </button>
-        <button id="headerNextPageBtn" type="button" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition" title="Next Page">
-          <span id="headerNextPageLabel">Next: Personal Info →</span>
-        </button>
-
         <button id="openDeployGuideBtn" type="button" class="hidden lg:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-blue-50 dark:bg-slate-900 text-blue-700 dark:text-blue-300 border border-blue-200/70 dark:border-slate-800 hover:bg-blue-100 dark:hover:bg-slate-800 transition" title="View 1-Page Executive Resume Summary">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           <span>1-Page CV Summary</span>
@@ -114,6 +108,7 @@
     <div id="mobileMenu" class="hidden md:hidden border-t border-blue-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-2 space-y-1">
       <button type="button" data-transport="hero" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Home</button>
       <button type="button" data-transport="personal-info" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Personal Information</button>
+      <button type="button" data-transport="educational-attainment" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Educational Attainment</button>
       <button type="button" data-transport="achievements" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Achievements &amp; Projects</button>
       <button type="button" data-transport="pictures" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Pictures Gallery</button>
       <button type="button" data-transport="contacts" class="w-full text-left px-3 py-1.5 rounded-lg text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800">Contacts</button>
@@ -125,9 +120,9 @@
   <main class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 overflow-hidden flex items-center justify-center relative">
 
     <!-- ==========================================
-         PAGE 1: RESUME COVER — 5X LARGER FORMAL PORTRAIT + NEXT PAGE TO PERSONAL INFO
+         PAGE 1: RESUME COVER — 5X LARGER FORMAL PORTRAIT
          ========================================== -->
-    <section id="hero" class="page-view page-fade w-full h-full flex flex-col justify-between hero-glow py-3">
+    <section id="hero" class="page-view page-fade w-full h-full flex flex-col justify-center hero-glow py-2">
       <div class="my-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-center w-full">
 
         <!-- Left / Center Showcase: 5x Larger Formal Portrait Only -->
@@ -144,7 +139,7 @@
           </div>
         </div>
 
-        <!-- Right Column: Professional Resume Cover Summary & Next Page CTA -->
+        <!-- Right Column: Professional Resume Cover Summary -->
         <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
           <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 px-3.5 py-1 rounded-full bg-blue-100/80 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800/80 text-blue-700 dark:text-blue-300 text-xs font-semibold mb-2.5">
             <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
@@ -156,66 +151,26 @@
           </h1>
 
           <p class="text-xs sm:text-sm font-semibold text-blue-600 dark:text-blue-400 mb-3">
-            Data Science &amp; Analytics Undergraduate • Financial Audit Immersion Trainee • Upper Crystal Cave, Bakakeng Central, Baguio City
+            Data Science &amp; Analytics Undergraduate • Financial Audit Immersion Trainee • Bakakeng Central, Baguio City
           </p>
 
-          <p id="shortBioDisplay" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed font-normal mb-4">
+          <p id="shortBioDisplay" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed font-normal mb-5">
             Detail-oriented BS Data Science &amp; Analytics undergraduate at the University of the Cordilleras (CITCS) and High Honor ABM graduate awarded <strong>Best in Math in ABM</strong>. Experienced in municipal voucher auditing and financial record verification at the <strong>City Government of Baguio Accounting Office</strong> (80 hours), combining strong foundations in Python, Java, statistics, and accounting with competitive excellence as a national quiz bee contender and 15-medal Most Outstanding Swimmer.
           </p>
 
           <!-- Key Resume Highlights Strip -->
-          <div class="grid grid-cols-3 gap-2.5 w-full max-w-lg mb-4">
-            <div class="p-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800 shadow-sm">
+          <div class="grid grid-cols-3 gap-2.5 w-full max-w-lg mb-5">
+            <div class="p-3 rounded-2xl bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800 shadow-sm">
               <div class="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400">High Honors</div>
-              <div class="text-[11px] text-slate-500 dark:text-slate-400">Best in Math in ABM</div>
+              <div class="text-[11px] text-slate-500 dark:text-slate-400">UC Senior High School</div>
             </div>
-            <div class="p-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800 shadow-sm">
+            <div class="p-3 rounded-2xl bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800 shadow-sm">
               <div class="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400">80 Hours</div>
               <div class="text-[11px] text-slate-500 dark:text-slate-400">Baguio Accounting Office</div>
             </div>
-            <div class="p-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800 shadow-sm">
+            <div class="p-3 rounded-2xl bg-white dark:bg-slate-900 border border-blue-100 dark:border-slate-800 shadow-sm">
               <div class="text-xs sm:text-sm font-bold text-blue-600 dark:text-blue-400">Python &amp; Java</div>
               <div class="text-[11px] text-slate-500 dark:text-slate-400">BS Data Science @ UC</div>
-            </div>
-          </div>
-
-          <!-- Primary Next Page CTA leading directly to Page 2 (Personal Information) -->
-          <div class="w-full max-w-lg mb-4 space-y-2">
-            <button
-              id="heroNextPageBtn"
-              type="button"
-              data-transport="personal-info"
-              class="w-full flex items-center justify-between px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm sm:text-base shadow-lg shadow-blue-600/20 transition transform active:scale-[0.99]"
-            >
-              <span class="flex items-center gap-2">
-                <span>Next Page: Personal Information &amp; Resume</span>
-                <span class="text-xs font-normal text-blue-100">(Page 2 of 5)</span>
-              </span>
-              <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-            </button>
-
-            <div class="grid grid-cols-3 gap-2">
-              <button
-                type="button"
-                data-transport="personal-info"
-                class="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-blue-50 dark:hover:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/80 dark:border-slate-800 font-medium text-xs transition"
-              >
-                <span>Personal Info</span>
-              </button>
-              <button
-                type="button"
-                data-transport="achievements"
-                class="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-blue-50 dark:hover:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/80 dark:border-slate-800 font-medium text-xs transition"
-              >
-                <span>Achievements</span>
-              </button>
-              <button
-                type="button"
-                data-transport="pictures"
-                class="flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-blue-50 dark:hover:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/80 dark:border-slate-800 font-medium text-xs transition"
-              >
-                <span>Pictures</span>
-              </button>
             </div>
           </div>
 
@@ -292,159 +247,190 @@
     </section>
 
     <!-- ==========================================
-         PAGE 2: PERSONAL INFORMATION, WORK EXPERIENCE & EDUCATION (RESUME CORE)
+         PAGE 2: PERSONAL INFORMATION (DEDICATED PAGE)
          ========================================== -->
-    <section id="personal-info" class="page-view page-fade hidden w-full h-full flex flex-col justify-between py-3">
-      <div class="bg-white dark:bg-slate-900 rounded-3xl border border-blue-100 dark:border-slate-800 p-5 sm:p-6 shadow-sm h-full flex flex-col justify-between overflow-hidden">
+    <section id="personal-info" class="page-view page-fade hidden w-full h-full flex flex-col justify-center py-2">
+      <div class="bg-white dark:bg-slate-900 rounded-3xl border border-blue-100 dark:border-slate-800 p-6 sm:p-8 shadow-sm h-full flex flex-col justify-between overflow-hidden">
 
-        <div class="pb-2.5 border-b border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 shrink-0">
-          <div class="flex items-center gap-3">
-            <button type="button" data-transport="hero" class="px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-slate-800 hover:bg-blue-100 text-blue-600 dark:text-blue-400 text-xs font-semibold transition">
-              ← Page 1: Home
-            </button>
-            <div>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Page 2 of 5 • Curriculum Vitae</span>
-              <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">Personal Information, Experience &amp; Education</h2>
-            </div>
+        <div class="pb-3 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2 shrink-0">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Page 2 of 6 • Personal Profile</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">Personal Information</h2>
           </div>
-          <button
-            type="button"
-            data-transport="achievements"
-            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-sm transition"
-          >
-            <span>Next Page: Achievements →</span>
-          </button>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-slate-700">
+            Academic ID: 26-3641-389
+          </span>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 my-auto py-1.5">
-          <!-- Left Column: Personal Details & Technical Skills -->
-          <div class="lg:col-span-5 space-y-2">
-            <h3 class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Personal &amp; Contact Information</h3>
-
-            <div class="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
-              <span class="text-xs text-slate-500 dark:text-slate-400">Full Name</span>
-              <span class="text-xs font-semibold text-slate-900 dark:text-white">Andrei Troy Vergara Almora</span>
+        <div class="my-auto py-2 max-w-4xl mx-auto w-full">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+              <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Full Name</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white text-right">Andrei Troy Vergara Almora</span>
             </div>
 
-            <div class="p-2.5 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/60 flex items-center justify-between gap-2">
-              <span class="text-xs text-blue-700 dark:text-blue-300 font-medium shrink-0">Home Address</span>
-              <span class="text-xs font-semibold text-slate-900 dark:text-white text-right">Upper Crystal Cave, Bakakeng Central, Baguio City 2600</span>
+            <div class="p-4 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/60 flex items-center justify-between gap-3">
+              <span class="text-xs sm:text-sm text-blue-700 dark:text-blue-300 font-medium">Academic ID</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white text-right font-mono">26-3641-389</span>
             </div>
 
-            <div class="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
-              <span class="text-xs text-slate-500 dark:text-slate-400">Date of Birth / Age</span>
-              <span class="text-xs font-semibold text-slate-900 dark:text-white">January 18, 2008 (Age 18)</span>
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+              <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Date of Birth &amp; Age</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white text-right">January 18, 2008 (Age 18)</span>
             </div>
 
-            <div class="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
-              <span class="text-xs text-slate-500 dark:text-slate-400">Email &amp; Academic ID</span>
-              <span class="text-xs font-semibold text-slate-900 dark:text-white">almoraandrei@gmail.com</span>
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+              <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Place of Birth</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white text-right">Baguio City</span>
             </div>
 
-            <div class="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
-              <span class="text-xs text-slate-500 dark:text-slate-400">Languages</span>
-              <span class="text-xs font-semibold text-slate-900 dark:text-white">English, Filipino, Ilocano</span>
+            <div class="p-4 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/60 flex items-center justify-between gap-3">
+              <span class="text-xs sm:text-sm text-blue-700 dark:text-blue-300 font-medium">Home Address</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white text-right">Bakakeng Central, Baguio City</span>
             </div>
 
-            <div class="pt-1">
-              <h4 class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-1.5">Technical &amp; Analytical Competencies</h4>
-              <div class="flex flex-wrap gap-1.5">
-                <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-blue-600 text-white">Best in Math in ABM</span>
-                <span class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-slate-700">Python 3 &amp; Data Analysis</span>
-                <span class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-slate-700">Java (OOP &amp; Discrete Logic)</span>
-                <span class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-slate-700">Financial Auditing &amp; Bookkeeping</span>
-                <span class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-slate-700">eGov Municipal Systems</span>
-                <span class="px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-slate-700">Statistical Modeling</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Work Immersion Experience & Academic Background -->
-          <div class="lg:col-span-7 flex flex-col justify-between space-y-2.5">
-            <h3 class="text-[11px] font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">Work Experience &amp; Education</h3>
-
-            <!-- Work Experience / Internship -->
-            <div class="p-3 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/80">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-blue-700 dark:text-blue-300">Apr 20 – May 26, 2026 • Work Immersion (80 Hours)</span>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-blue-600 text-white font-semibold">Certified Experience</span>
-              </div>
-              <h4 class="font-bold text-sm text-slate-900 dark:text-white mt-0.5">Accounting Office Trainee — City Government of Baguio</h4>
-              <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-snug">
-                Audited municipal disbursement vouchers on the <strong>eGov Baguio</strong> portal and verified Official Receipts and Reports of Collections &amp; Deposits in the <strong>Barangay Accounting System</strong> under City Accountant <strong>Fredda C. Jimenez, CPA</strong>.
-              </p>
+            <div class="p-4 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/60 flex items-center justify-between gap-3">
+              <span class="text-xs sm:text-sm text-blue-700 dark:text-blue-300 font-medium">Contact No.</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white text-right">+ 63 920 108 4498</span>
             </div>
 
-            <!-- College -->
-            <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-blue-600 dark:text-blue-400">2026 – Present • Tertiary Education</span>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-semibold">BS Data Science &amp; Analytics</span>
-              </div>
-              <h4 class="font-bold text-sm text-slate-900 dark:text-white mt-0.5">University of the Cordilleras — CITCS</h4>
-              <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-snug">
-                Undergraduate in <strong>BS Data Science &amp; Analytics (BSDS)</strong>, College of Information Technology and Computer Science. Active member of <strong>AWS Student Builders Group (UC)</strong>.
-              </p>
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+              <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Email Address</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white text-right">almoraandrei@gmail.com</span>
             </div>
 
-            <!-- Senior High School -->
-            <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800">
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-blue-600 dark:text-blue-400">2024 – 2026 • Senior High School &amp; 2020 – 2024 • Junior High School</span>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold">With High Honors • Best in Math in ABM</span>
-              </div>
-              <h4 class="font-bold text-sm text-slate-900 dark:text-white mt-0.5">University of the Cordilleras SHS &amp; Baguio City High School</h4>
-              <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-snug">
-                Graduated <strong>With High Honors</strong> in ABM Strand (<strong>Innovation Section</strong>) and awarded <strong>Best in Math in ABM</strong> at UC SHS; completed Junior High School at <strong>Baguio City High School</strong> with a <strong>94.38% GWA</strong>.
-              </p>
+            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3">
+              <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">Languages Spoken</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white text-right">English, Filipino, Ilocano</span>
             </div>
           </div>
         </div>
 
         <div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 shrink-0">
-          <button type="button" data-transport="hero" class="font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600">← Previous: Home</button>
-          <a href="https://citcs.uc-bcf.edu.ph/programs/" target="_blank" rel="noopener noreferrer" class="hover:underline text-blue-600 dark:text-blue-400">University of the Cordilleras CITCS</a>
-          <button type="button" data-transport="achievements" class="font-semibold text-blue-600 dark:text-blue-400 hover:underline">Next Page: Achievements →</button>
+          <span>University of the Cordilleras • College of Information Technology and Computer Science</span>
+          <a href="https://citcs.uc-bcf.edu.ph/programs/" target="_blank" rel="noopener noreferrer" class="hover:underline text-blue-600 dark:text-blue-400">UC-CITCS Official Page</a>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         PAGE 3: ACHIEVEMENTS, AWARDS & TECHNICAL PORTFOLIO
+         PAGE 3: EDUCATIONAL ATTAINMENT (DEDICATED PAGE FOR WORK EXPERIENCE & EDUCATION)
          ========================================== -->
-    <section id="achievements" class="page-view page-fade hidden w-full h-full flex flex-col justify-between py-3">
-      <div class="bg-white dark:bg-slate-900 rounded-3xl border border-blue-100 dark:border-slate-800 p-4 sm:p-6 shadow-sm h-full flex flex-col justify-between overflow-hidden">
+    <section id="educational-attainment" class="page-view page-fade hidden w-full h-full flex flex-col justify-center py-2">
+      <div class="bg-white dark:bg-slate-900 rounded-3xl border border-blue-100 dark:border-slate-800 p-6 sm:p-8 shadow-sm h-full flex flex-col justify-between overflow-hidden">
 
-        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100 dark:border-slate-800 shrink-0">
-          <div class="flex items-center gap-3">
-            <button type="button" data-transport="personal-info" class="px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-slate-800 hover:bg-blue-100 text-blue-600 dark:text-blue-400 text-xs font-semibold transition flex items-center gap-1">
-              <span>← Page 2: Personal Info</span>
-            </button>
+        <div class="pb-3 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2 shrink-0">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Page 3 of 6 • Academic &amp; Immersion Background</span>
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white leading-tight">Educational Attainment</h2>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-slate-700">
+            Work Experience &amp; Education
+          </span>
+        </div>
+
+        <div class="my-auto py-2 grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <!-- College -->
+          <div class="p-4 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/80 flex flex-col justify-between">
             <div>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Page 3 of 5 • Honors &amp; Technical Portfolio</span>
-              <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">Awards, Competitions &amp; Software Projects</h2>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-bold text-blue-700 dark:text-blue-300">2026 – Present • Tertiary Education</span>
+                <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-blue-600 text-white font-semibold">Current</span>
+              </div>
+              <h3 class="font-bold text-base text-slate-900 dark:text-white">University of the Cordilleras — CITCS</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
+                Undergraduate in <strong>Bachelor of Science in Data Science &amp; Analytics (BSDS)</strong> under the College of Information Technology and Computer Science. Active member of <strong>AWS Student Builders Group (UC)</strong>.
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-blue-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-blue-700 dark:text-blue-300 font-semibold">
+              <span>Academic ID: 26-3641-389</span>
+              <span>Governor Pack Road, Baguio City</span>
             </div>
           </div>
 
-          <div class="flex items-center gap-2">
-            <div class="inline-flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
-              <button type="button" data-ach-filter="all" class="ach-tab px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 shadow-sm transition">All (8)</button>
-              <button type="button" data-ach-filter="academic" class="ach-tab px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition">Academic &amp; Awards</button>
-              <button type="button" data-ach-filter="code" class="ach-tab px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition">Code Projects</button>
+          <!-- Senior High School -->
+          <div class="p-4 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/80 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-bold text-blue-700 dark:text-blue-300">2024 – 2026 • Senior High School</span>
+                <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-blue-600 text-white font-semibold">With High Honors • Best in Math in ABM</span>
+              </div>
+              <h3 class="font-bold text-base text-slate-900 dark:text-white">University of the Cordilleras Integrated School (SHS)</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
+                Graduated <strong>With High Honors</strong> in the Accountancy, Business, and Management (<strong>ABM — Innovation Section</strong>) strand and awarded <strong>Best in Math in ABM</strong>. Represented UC in national and regional ABM &amp; Statistics quiz bees.
+              </p>
             </div>
+            <div class="mt-3 pt-2 border-t border-blue-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-blue-700 dark:text-blue-300 font-semibold">
+              <span>ABM Strand (Innovation)</span>
+              <span>Baguio City</span>
+            </div>
+          </div>
 
-            <button
-              type="button"
-              data-transport="pictures"
-              class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-sm transition"
-            >
-              <span>Next Page: Pictures →</span>
-            </button>
+          <!-- Junior High School -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-bold text-blue-600 dark:text-blue-400">2020 – 2024 • Junior High School</span>
+                <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold">94.38% GWA</span>
+              </div>
+              <h3 class="font-bold text-base text-slate-900 dark:text-white">Baguio City High School</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
+                Completed Junior High School with a <strong>94.38% General Weighted Average</strong> while competing as a multi-medalist swimmer (1× Most Outstanding Swimmer, 3 Gold, 5 Silver, 7 Bronze).
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-200/70 dark:border-slate-700 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+              <span>Academic Honor Roll</span>
+              <span>Governor Pack Road, Baguio City</span>
+            </div>
+          </div>
+
+          <!-- Work Experience / Work Immersion -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-bold text-blue-600 dark:text-blue-400">Apr 20 – May 26, 2026 • Work Immersion (80 Hours)</span>
+                <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 font-bold">Certified Experience</span>
+              </div>
+              <h3 class="font-bold text-base text-slate-900 dark:text-white">Accounting Office Trainee — City Government of Baguio</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
+                Audited municipal disbursement vouchers on the <strong>eGov Baguio</strong> portal and verified Official Receipts and Reports of Collections &amp; Deposits in the <strong>Barangay Accounting System</strong> under City Accountant <strong>Fredda C. Jimenez, CPA</strong>.
+              </p>
+            </div>
+            <div class="mt-3 pt-2 border-t border-slate-200/70 dark:border-slate-700 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+              <span>Certified May 28, 2026</span>
+              <span>Baguio City Hall</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 shrink-0">
+          <span>Educational Attainment &amp; Work Immersion Record</span>
+          <span>Baguio City, Philippines</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PAGE 4: ACHIEVEMENTS, AWARDS & TECHNICAL PORTFOLIO
+         ========================================== -->
+    <section id="achievements" class="page-view page-fade hidden w-full h-full flex flex-col justify-between py-2">
+      <div class="bg-white dark:bg-slate-900 rounded-3xl border border-blue-100 dark:border-slate-800 p-4 sm:p-6 shadow-sm h-full flex flex-col justify-between overflow-hidden">
+
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-100 dark:border-slate-800 shrink-0">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Page 4 of 6 • Honors &amp; Technical Portfolio</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">Awards, Competitions &amp; Software Projects</h2>
+          </div>
+
+          <div class="inline-flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+            <button type="button" data-ach-filter="all" class="ach-tab px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 shadow-sm transition">All (8)</button>
+            <button type="button" data-ach-filter="academic" class="ach-tab px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition">Academic &amp; Awards</button>
+            <button type="button" data-ach-filter="code" class="ach-tab px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition">Code Projects</button>
           </div>
         </div>
 
         <!-- 8-Card Resume Grid -->
-        <div id="achievementsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 my-auto py-2">
+        <div id="achievementsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 my-auto py-1.5">
           <!-- 1. High Honors & Best in Math in ABM -->
           <div data-ach-cat="academic" class="ach-card p-3.5 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/80 flex flex-col justify-between">
             <div>
@@ -641,41 +627,26 @@
     </section>
 
     <!-- ==========================================
-         PAGE 4: PICTURES & CREDENTIALS GALLERY
+         PAGE 5: PICTURES & CREDENTIALS GALLERY
          ========================================== -->
-    <section id="pictures" class="page-view page-fade hidden w-full h-full flex flex-col justify-between py-3">
+    <section id="pictures" class="page-view page-fade hidden w-full h-full flex flex-col justify-between py-2">
       <div class="bg-white dark:bg-slate-900 rounded-3xl border border-blue-100 dark:border-slate-800 p-4 sm:p-6 shadow-sm h-full flex flex-col justify-between overflow-hidden">
 
-        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100 dark:border-slate-800 shrink-0">
-          <div class="flex items-center gap-3">
-            <button type="button" data-transport="achievements" class="px-3 py-1.5 rounded-xl bg-blue-50 dark:bg-slate-800 hover:bg-blue-100 text-blue-600 dark:text-blue-400 text-xs font-semibold transition">
-              ← Page 3: Achievements
-            </button>
-            <div>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Page 4 of 5 • Credentials &amp; Documentation</span>
-              <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">Pictures &amp; Work Immersion Portfolio</h2>
-            </div>
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-100 dark:border-slate-800 shrink-0">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Page 5 of 6 • Credentials &amp; Documentation</span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-tight">Pictures &amp; Work Immersion Portfolio</h2>
           </div>
 
-          <div class="flex items-center gap-2">
-            <div class="inline-flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
-              <button type="button" data-pic-filter="all" class="pic-tab px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 shadow-sm transition">All Photos (7)</button>
-              <button type="button" data-pic-filter="portraits" class="pic-tab px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition">Portraits</button>
-              <button type="button" data-pic-filter="immersion" class="pic-tab px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition">Work Immersion</button>
-            </div>
-
-            <button
-              type="button"
-              data-transport="contacts"
-              class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-sm transition"
-            >
-              <span>Next Page: Contacts →</span>
-            </button>
+          <div class="inline-flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+            <button type="button" data-pic-filter="all" class="pic-tab px-2.5 py-1 rounded-lg text-xs font-medium bg-white dark:bg-slate-900 text-blue-600 dark:text-blue-400 shadow-sm transition">All Photos (7)</button>
+            <button type="button" data-pic-filter="portraits" class="pic-tab px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition">Portraits</button>
+            <button type="button" data-pic-filter="immersion" class="pic-tab px-2.5 py-1 rounded-lg text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 transition">Work Immersion</button>
           </div>
         </div>
 
         <!-- 4-Column Bento Grid -->
-        <div id="picturesGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-auto py-2 h-[calc(100%-4.5rem)]">
+        <div id="picturesGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-auto py-2 h-[calc(100%-4rem)]">
           <!-- Photo 1: Formal Portrait -->
           <div data-pic-cat="portraits" class="pic-card group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 cursor-pointer h-full" data-lightbox-caption="Andrei Troy V. Almora — Formal Studio Portrait">
             <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCAJYAcIDASIAAhEBAxEB/8QAHQABAAIDAQEBAQAAAAAAAAAAAAQFAwYHAggBCf/EAEcQAAEDAgQDBQUFBgQEBgMBAAEAAgMEEQUSITEGQVEHEyJhcRQygZGhI0JSscEIFTNi0eEWJHLwJYKSsiZDdKLC8Rc0U2T/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAgMEAQUG/8QAJxEBAQACAgICAgMAAgMAAAAAAAECEQMhEjEEQSJRBRNhMkJDUnH/2gAMAwEAAhEDEQA/APqlERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBER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" alt="Andrei Formal Portrait" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
@@ -744,24 +715,19 @@
     </section>
 
     <!-- ==========================================
-         PAGE 5: CONTACTS & REFERENCES HUB
+         PAGE 6: CONTACTS & REFERENCES HUB
          ========================================== -->
-    <section id="contacts" class="page-view page-fade hidden w-full h-full flex flex-col justify-center py-3">
+    <section id="contacts" class="page-view page-fade hidden w-full h-full flex flex-col justify-center py-2">
       <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-6 sm:p-8 text-white shadow-lg h-full flex flex-col justify-between">
         <div class="flex items-center justify-between">
-          <button type="button" data-transport="pictures" class="px-3.5 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-white text-xs font-semibold transition">
-            ← Page 4: Pictures
-          </button>
-          <span class="text-xs font-semibold uppercase tracking-wider text-blue-200">Page 5 of 5 • Contact &amp; References</span>
-          <button type="button" data-transport="hero" class="px-3.5 py-1.5 rounded-xl bg-white text-blue-700 hover:bg-blue-50 text-xs font-semibold transition">
-            Back to Page 1: Home ↺
-          </button>
+          <span class="text-xs font-semibold uppercase tracking-wider text-blue-200">Page 6 of 6 • Contact &amp; References</span>
+          <span class="text-xs text-blue-100 font-mono">+ 63 920 108 4498 • Academic ID: 26-3641-389</span>
         </div>
 
         <div class="max-w-4xl mx-auto text-center my-auto w-full">
           <h2 class="text-2xl sm:text-3xl font-bold">Contacts, Profiles &amp; Character Reference</h2>
           <p class="text-xs sm:text-sm text-blue-100 mt-1 max-w-xl mx-auto">
-            Upper Crystal Cave, Bakakeng Central, Baguio City, Philippines 2600 • Available for internships, academic collaborations, and data science projects.
+            Bakakeng Central, Baguio City • + 63 920 108 4498 • Available for internships, academic collaborations, and data science projects.
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-5 text-left">
@@ -782,7 +748,7 @@
               </div>
               <div class="min-w-0">
                 <div class="text-xs text-blue-200 font-medium">Canvas Account</div>
-                <div class="text-sm font-semibold truncate">UC Canvas LMS</div>
+                <div class="text-sm font-semibold truncate">UC Canvas LMS (26-3641-389)</div>
                 <div class="text-[11px] text-blue-200/90 mt-0.5 truncate">ava1389@students.uc-bcf.edu.ph</div>
               </div>
             </a>
@@ -814,9 +780,9 @@
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               </div>
               <div class="min-w-0 flex-1">
-                <div class="text-xs text-blue-200 font-medium">Email Contact</div>
+                <div class="text-xs text-blue-200 font-medium">Email &amp; Phone</div>
                 <a id="contactEmailAnchor" href="mailto:almoraandrei@gmail.com" class="text-sm font-semibold truncate block hover:underline">almoraandrei@gmail.com</a>
-                <button id="footerCopyEmailBtn" type="button" class="text-[11px] text-blue-200 hover:text-white underline mt-0.5">Copy Email Address</button>
+                <button id="footerCopyEmailBtn" type="button" class="text-[11px] text-blue-200 hover:text-white underline mt-0.5">+ 63 920 108 4498 (Copy Email)</button>
               </div>
             </div>
 
@@ -845,20 +811,41 @@
         </div>
 
         <div class="text-center text-xs text-blue-200">
-          Upper Crystal Cave, Bakakeng Central, Baguio City • University of the Cordilleras
+          Bakakeng Central, Baguio City • University of the Cordilleras
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Minimal Fixed Footer Bar -->
-  <footer class="shrink-0 border-t border-blue-100 dark:border-slate-800 py-2.5 text-center text-[11px] text-slate-500 dark:text-slate-400 bg-white/60 dark:bg-slate-950/60">
-    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
-      <div>© 2026 Andrei Troy V. Almora • Upper Crystal Cave, Bakakeng Central, Baguio City</div>
-      <div class="flex items-center gap-4">
+  <!-- Bottom Bar with Prominent Next Page Button in the Bottom-Right Corner -->
+  <footer class="shrink-0 border-t border-blue-100 dark:border-slate-800 py-3 px-4 sm:px-6 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+        <span class="hidden sm:inline">© 2026 Andrei Troy V. Almora • Bakakeng Central, Baguio City</span>
         <button id="footerDeployBtn" type="button" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">1-Page CV Summary</button>
-        <button id="backToTopBtn" type="button" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Back to Top ↑</button>
+        <button id="backToTopBtn" type="button" class="hover:text-blue-600 dark:hover:text-blue-400 transition hidden sm:inline">First Page ↑</button>
+      </div>
+
+      <!-- Bottom-Right Corner Page-to-Page Navigation (Large & Easy to Click) -->
+      <div class="flex items-center gap-2.5 ml-auto">
+        <button
+          id="headerPrevPageBtn"
+          type="button"
+          class="hidden items-center gap-2 px-5 py-3 rounded-2xl text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 transition"
+          title="Previous Page"
+        >
+          <span>← Previous</span>
+        </button>
+
+        <button
+          id="headerNextPageBtn"
+          type="button"
+          class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl text-sm sm:text-base font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/25 transition transform active:scale-[0.99]"
+          title="Next Page"
+        >
+          <span id="headerNextPageLabel">Next Page: Personal Information →</span>
+        </button>
       </div>
     </div>
   </footer>
@@ -894,11 +881,11 @@
       <div class="space-y-3.5 mt-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
         <div class="p-3.5 rounded-2xl bg-blue-50/70 dark:bg-slate-800/70 border border-blue-100 dark:border-slate-700">
           <div class="font-bold text-slate-900 dark:text-white mb-0.5">Contact &amp; Personal Details</div>
-          <p><strong>Address:</strong> Upper Crystal Cave, Bakakeng Central, Baguio City, Philippines 2600 • <strong>Email:</strong> almoraandrei@gmail.com / ava1389@students.uc-bcf.edu.ph • <strong>Portfolio:</strong> www.andreialmora.dpdns.org</p>
+          <p><strong>Academic ID:</strong> 26-3641-389 • <strong>Place of Birth:</strong> Baguio City • <strong>Address:</strong> Bakakeng Central, Baguio City • <strong>Contact No.:</strong> + 63 920 108 4498 • <strong>Email:</strong> almoraandrei@gmail.com</p>
         </div>
 
         <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-          <div class="font-bold text-slate-900 dark:text-white mb-1">Education &amp; Academic Honors</div>
+          <div class="font-bold text-slate-900 dark:text-white mb-1">Educational Attainment</div>
           <ul class="list-disc pl-4 space-y-1">
             <li><strong>University of the Cordilleras — CITCS (2026–Present):</strong> BS in Data Science &amp; Analytics (BSDS); Member, AWS Student Builders Group (UC).</li>
             <li><strong>University of the Cordilleras Integrated School — SHS (2024–2026):</strong> ABM Strand (Innovation Section) — <strong>Graduated With High Honors</strong> &amp; <strong>Best in Math in ABM</strong>.</li>
@@ -940,11 +927,12 @@
       var emailAddr = "almoraandrei@gmail.com";
 
       var pageOrder = [
-        { id: "hero", title: "Resume Cover", nextLabel: "Next: Personal Info →" },
-        { id: "personal-info", title: "Personal Info", nextLabel: "Next: Achievements →" },
-        { id: "achievements", title: "Achievements", nextLabel: "Next: Pictures →" },
-        { id: "pictures", title: "Pictures", nextLabel: "Next: Contacts →" },
-        { id: "contacts", title: "Contacts", nextLabel: "Back to Home ↺" }
+        { id: "hero", title: "Resume Cover", nextLabel: "Next Page: Personal Information →" },
+        { id: "personal-info", title: "Personal Information", nextLabel: "Next Page: Educational Attainment →" },
+        { id: "educational-attainment", title: "Educational Attainment", nextLabel: "Next Page: Achievements →" },
+        { id: "achievements", title: "Achievements", nextLabel: "Next Page: Pictures →" },
+        { id: "pictures", title: "Pictures", nextLabel: "Next Page: Contacts →" },
+        { id: "contacts", title: "Contacts", nextLabel: "Back to Page 1: Home ↺" }
       ];
       var currentPageIndex = 0;
 
@@ -1019,15 +1007,21 @@
 
         var prevBtn = document.getElementById("headerPrevPageBtn");
         if (prevBtn) {
-          prevBtn.disabled = currentPageIndex === 0;
+          if (currentPageIndex === 0) {
+            prevBtn.classList.add("hidden");
+            prevBtn.classList.remove("inline-flex");
+          } else {
+            prevBtn.classList.remove("hidden");
+            prevBtn.classList.add("inline-flex");
+          }
         }
 
         var pills = document.querySelectorAll(".nav-pill");
         pills.forEach(function (pill) {
           if (pill.getAttribute("data-transport") === targetId) {
-            pill.className = "nav-pill px-3.5 py-1 rounded-full text-xs font-medium transition bg-blue-600 text-white shadow-sm";
+            pill.className = "nav-pill px-3 py-1 rounded-full text-xs font-medium transition bg-blue-600 text-white shadow-sm";
           } else {
-            pill.className = "nav-pill px-3.5 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition";
+            pill.className = "nav-pill px-3 py-1 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition";
           }
         });
 
